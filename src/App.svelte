@@ -22,10 +22,7 @@
 			font-size: 4em;
 			font-weight: 100;
 		}
-	}
-
-	@media (min-width: 640px) {
-		main {
+		@media (min-width: 640px) {
 			max-width: none;
 		}
 	}
