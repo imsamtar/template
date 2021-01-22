@@ -7,7 +7,7 @@
 </main>
 
 <style lang="scss">
-	$color: #ff3e00;
+	@import "./scss/variables.scss";
 
 	main {
 		text-align: center;
