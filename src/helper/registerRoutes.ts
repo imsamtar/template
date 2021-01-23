@@ -29,7 +29,7 @@ export default function registerRoutes(routes) {
     page.replace(completePath);
 }
 
-export function goto(path, replace = false) {
+export function goto(path: string, replace = false) {
     if (path) {
         return replace ? page.replace(path) : page.redirect(path);
     } else {
@@ -37,5 +37,5 @@ export function goto(path, replace = false) {
     }
 }
 
-window.page = page;
-window.goto = goto;
+window['page'] = page;
+window['goto'] = goto;
