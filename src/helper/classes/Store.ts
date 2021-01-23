@@ -1,7 +1,10 @@
-import { writable, get } from "svelte/store";
+import { writable, get, Writable } from "svelte/store";
 
-export default class Store {
-    constructor(value) {
+export default class Store implements Writable<any> {
+    set: any;
+    update: any;
+    subscribe: any;
+    constructor(value: any) {
         const { set, update, subscribe } = writable(value);
         this.set = set;
         this.update = update;
@@ -10,15 +13,15 @@ export default class Store {
     get() {
         return get(this);
     }
-    setProp(propName, value) {
+    setProp(propName: string, value: any) {
         this.update(state => {
-            if (typeof state == "object") {
+            if (typeof state === "object") {
                 state[propName] = value;
             }
             return state;
         })
     }
-    getProp(propName) {
+    getProp(propName: string) {
         const state = this.get();
         if (typeof state === "object") {
             return state[propName];

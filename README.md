@@ -20,12 +20,12 @@ import registerRoutes from "./helper/registerRoutes";
 const routes = {
     '/': {
         component: Dashboard,
-        beforeload: (ctx, params) => {
+        beforeload: (ctx, routeOptions) => {
             if(!auth){
                 return false;
             }
         },
-        onload: (ctx, params) => { 
+        onload: (ctx, routeOptions) => { 
             fetchData();
         }
     },
